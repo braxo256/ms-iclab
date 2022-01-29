@@ -16,7 +16,7 @@ def call(name, paso){
     //     }
      }    
 	
-	sh "git describe --tags 'git rev-list --tags --max-count=1'"
+	sh(returnStdout: true, script: "git tag --sort version:refname | tail -1").trim()
 	
 
 }
