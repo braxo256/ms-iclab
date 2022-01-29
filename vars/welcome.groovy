@@ -15,10 +15,12 @@ def call(name, paso){
              echo "Responder mi mensaje: '${name}'"
     //     }
      }    
-	
-	def repoUrl = env.GIT_URL
+//	
+//	def repoUrl = env.GIT_URL
+	  echo 'Pulling BRANCH_NAME...' + env.BRANCH_NAME
+	  echo 'Pulling GIT_URL...' + env.GIT_URL
 //def key = repoUrl.split('/')[3]
 //def slug = repoUrl.split('/')[4]
 //slug = slug.substring(0, slug.lastIndexOf('.')) //Remove .git
-echo "The projectKey is: ${repoUrl}"
+//echo "The projectKey is: ${repoUrl}"
 }
