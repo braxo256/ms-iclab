@@ -17,8 +17,8 @@ def call(name, paso){
      }    
 //	
 //	def repoUrl = env.GIT_URL
-	  echo 'Pulling BRANCH_NAME...' + env.BRANCH_NAME
-	  echo 'Pulling GIT_URL...' + env.GIT_URL
+	echo 'Pulling BRANCH_NAME...' + ${BRANCH_NAME}
+	echo 'Pulling GIT_URL...' + ${GIT_URL}
 	sh "env"
 //def key = repoUrl.split('/')[3]
 //def slug = repoUrl.split('/')[4]
