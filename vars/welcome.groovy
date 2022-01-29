@@ -16,7 +16,7 @@ def call(name, paso){
     //     }
      }    
 	
-	def repoUrl = checkout(scm).GIT_URL
+	def repoUrl = env.GIT_URL
 def key = repoUrl.tokenize('/')[3]
 def slug = repoUrl.tokenize('/')[4]
 slug = slug.substring(0, slug.lastIndexOf('.')) //Remove .git
