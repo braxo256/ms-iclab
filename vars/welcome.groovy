@@ -16,8 +16,11 @@ def call(name, paso){
     //     }
      }    
 	
-	sh(returnStdout: true, script: "git tag --sort version:refname | tail -1").trim()
 	
-
+	
+	def gitTag = null
+	script {
+          gitTag=sh(returnStdout: true, script: "git tag --contains | head -1").trim()
+		 return gitTag;
+        }
 }
-
