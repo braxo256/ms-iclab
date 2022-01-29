@@ -40,5 +40,5 @@ def nextVersionFromGit() {
             nextVersion = "${major}.${minor}.${patch + 1}"
             break
     }
-    nextVersion
+    echo nextVersion
 }
