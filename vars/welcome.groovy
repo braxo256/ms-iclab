@@ -16,7 +16,7 @@ def call(name, paso){
     //     }
      }    
 //		
-	def repoUrl = "'${GIT_URL}' ".split('/')
+	//def repoUrl = "'${GIT_URL}' ".split('/')
 	echo "Pulling BRANCH_NAME...'${BRANCH_NAME}' "
 	echo "Pulling GIT_URL...'${GIT_URL}' "
 	
