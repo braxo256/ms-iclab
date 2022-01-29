@@ -16,9 +16,12 @@ def call(name, paso){
     //     }
      }    
 //	
-//	def repoUrl = env.GIT_URL
-	echo 'Pulling BRANCH_NAME...' + ${BRANCH_NAME}
-	echo 'Pulling GIT_URL...' + ${GIT_URL}
+	def stagesList = stages.split(';')
+	def repoUrl = "'${GIT_URL}' ".split('/')
+	echo "Pulling BRANCH_NAME...'${BRANCH_NAME}' "
+	echo "Pulling GIT_URL...'${GIT_URL}' "
+	
+	echo stagesList
 	sh "env"
 //def key = repoUrl.split('/')[3]
 //def slug = repoUrl.split('/')[4]
