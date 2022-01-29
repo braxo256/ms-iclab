@@ -15,15 +15,27 @@ def call(name, paso){
              echo "Responder mi mensaje: '${name}'"
     //     }
      }    
-//		
-	//def repoUrl = "'${GIT_URL}' ".split('/')
-	echo "Pulling BRANCH_NAME...'${BRANCH_NAME}' "
-	echo "Pulling GIT_URL...'${GIT_URL}' "
 	
-	echo stagesList
-	sh "env"
-//def key = repoUrl.split('/')[3]
-//def slug = repoUrl.split('/')[4]
-//slug = slug.substring(0, slug.lastIndexOf('.')) //Remove .git
-//echo "The projectKey is: ${repoUrl}"
+	
+	def nextVersionFromGit() {
+    def latestVersion = sh(returnStdout: true, script: 'git describe --tags --abbrev=0 --match *.*.* 2> /dev/null || echo 0.0.0').trim()
+    def (major, minor, patch) = latestVersion.tokenize('.').collect { it.toInteger() }
+    def nextVersion
+		
+ def scope = 'patch'
+		
+    switch (scope) {
+        case 'major':
+            nextVersion = "${major + 1}.0.0"
+            break
+        case 'minor':
+            nextVersion = "${major}.${minor + 1}.0"
+            break
+        case 'patch':
+            nextVersion = "${major}.${minor}.${patch + 1}"
+            break
+    }
+    nextVersion
+}
+
 }
