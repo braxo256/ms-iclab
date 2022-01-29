@@ -15,8 +15,7 @@ def call(name, paso){
              echo "Responder mi mensaje: '${name}'"
     //     }
      }    
-//	
-	def stagesList = stages.split(';')
+//		
 	def repoUrl = "'${GIT_URL}' ".split('/')
 	echo "Pulling BRANCH_NAME...'${BRANCH_NAME}' "
 	echo "Pulling GIT_URL...'${GIT_URL}' "
